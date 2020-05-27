@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Loan Default predictors</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="Credit_Amount" placeholder="Credit_Amount" required="required" />
+        <input type="text" name="Repayment_Status_Jan" placeholder="Repayment_Status_Jan"
+    	 required="required" />
+		<input type="text" name="Repayment_Status_March" placeholder="Repayment_Status_March"
+    	  required="required" />
+		<input type="text" name="Repayment_Status_May" placeholder="Repayment_Status_May"
+    	   required="required" />
+        <input type="text" name="Repayment_Status_June" placeholder="Repayment_Status_June"
+    	    required="required" />
+	   <input type="text" name="Jan_Bill_Amount" placeholder="Jan_Bill_Amount"
+    	     required="required" />
+	   <input type="text" name="Feb_Bill_Amount" placeholder="Feb_Bill_Amount" 
+    	     required="required" />
+	   <input type="text" name="Previous_Payment_Jan" placeholder="Previous_Payment_Jan"
+    	      required="required" />
+       <input type="text" name="Previous_Payment_Feb" placeholder="Previous_Payment_Feb"
+	         	     required="required" />
+       <input type="text" name="Previous_Payment_March" placeholder="Previous_Payment_March"
+	         	      required="required" />
+       <input type="text" name="Previous_Payment_April" placeholder="Previous_Payment_April"
+	         	      required="required" />
+       <input type="text" name="Previous_Payment_June" placeholder="Previous_Payment_June"
+	         	       required="required" />
+       <input type="text" name="Gender_Male" placeholder="Gender_Male" required="required" />
+       <input type="text" name="Academic_Qualification_Others"
+        placeholder="Academic_Qualification_Others" required="required" />
+       <input type="text" name="Academic_Qualification_Professional"
+         placeholder="Academic_Qualification_Professional" required="required" />
+       <input type="text" name="Marital_Single" placeholder="Marital_Single" required="required" />
+       <input type="text" name="My_Intercept" placeholder="My_Intercept" required="required" />
+	        	       
+       
+	         	       
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
